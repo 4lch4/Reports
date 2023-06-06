@@ -17,8 +17,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
-      - env:
-          HEADERS: ${{ steps.get_latest_release.outputs.headers }}
-          EXP_DATE: ${{ steps.get_latest_release.outputs.headers.github-authentication-token-expiration }}
-        run: "echo latest release: $EXP_DATE"
-      # - run: "echo latest release: ${{ steps.get_latest_release.outputs.headers }}"
+      - name: JQ Script
+        uses: edwardgeorge/jq-action@v1
+        with:
+          input: ${{ steps.get_latest_release.outputs.headers }}
+          script: .["github-authentication-token-expiration"]
