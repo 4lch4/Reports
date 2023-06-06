@@ -27,5 +27,5 @@ jobs:
       uses: peter-evans/create-issue-from-file@v4
       with:
         title: Stale repository report
-        content-filepath: ./stale_repos.md
+        content-filepath: stale_repos.md
         assignees: 4lch4
