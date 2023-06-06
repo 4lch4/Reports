@@ -1,4 +1,4 @@
-name: Log latest release
+name: Token Expiration Checker
 on:
   workflow_dispatch:
   schedule:
@@ -6,7 +6,8 @@ on:
     - cron: '20 4 * * 1'
 
 jobs:
-  logLatestRelease:
+  token-expiration-checker:
+    name: Generate Token Expiration Report
     runs-on: ubuntu-latest
     steps:
       - uses: octokit/request-action@v2.x
