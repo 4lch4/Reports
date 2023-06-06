@@ -2,6 +2,7 @@ name: Log latest release
 on:
   workflow_dispatch:
   schedule:
+    # Runs at 04:20 UTC on Monday.
     - cron: '20 4 * * 1'
 
 jobs:
