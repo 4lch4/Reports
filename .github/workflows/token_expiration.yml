@@ -19,5 +19,6 @@ jobs:
 
       - env:
           HEADERS: ${{ steps.get_latest_release.outputs.headers }}
-        run: "echo latest release: $HEADERS"
+          EXP_DATE: ${{ steps.get_latest_release.outputs.headers.github-authentication-token-expiration }}
+        run: "echo latest release: $EXP_DATE"
       # - run: "echo latest release: ${{ steps.get_latest_release.outputs.headers }}"
